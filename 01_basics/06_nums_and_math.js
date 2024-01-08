@@ -12,4 +12,3 @@ const anotherNumber = 123.8966
 
 console.log(anotherNumber.toPrecision(3));
 
-const hundreds
