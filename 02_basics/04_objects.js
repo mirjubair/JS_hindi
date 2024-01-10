@@ -60,3 +60,15 @@ console.log(Object.entries(tinderUser));
 console.log(tinderUser.hasOwnProperty('isLoggedIn'))
 
 
+// ++++++++++++++++++++++++API's++++++++++++++++++++
+        // JSON
+// {
+//     name : "jubair",
+//     courseNmae: "JS in hindi",
+//     price : "free",
+// }
+
+// [
+//     {},
+//     {},
+// ]
