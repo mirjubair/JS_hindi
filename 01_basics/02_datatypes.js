@@ -17,7 +17,7 @@ let isLoggedIn=false
 // string => " "
 // boolean => true/false
 // null => standalone value
-// undefined => abhi value assign nhi huvbi hai
+// undefined => abhi value assign nhi huvi hai
 // symbol => unique
 
 // object
