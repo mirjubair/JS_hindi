@@ -11,14 +11,14 @@
 // const id = Symbol('1234')
 // const anotherId = Symbol('1234')
 
-// // console.log(id == anotherId)
+// console.log(id == anotherId)
 
 // const bigNumber = 2435645787848n
 
 
-// // Reference (Non primitive)
+// Reference (Non primitive)
 
-// // Array, Objects, Functions
+// Array, Objects, Functions
 
 // const heros = ["superman","naagraj","doga"]
 
@@ -43,14 +43,14 @@
 
 // Stack (used in primitive), Heap(used in non primitive)
 // Stack
-let myYoutubename="jubicom"
+// let myYoutubename="jubicom"
 
-let anotherName= "chai aur code"
+// let anotherName= "chai aur code"
 
-console.log(anotherName);
-console.log(myYoutubename);
+// console.log(anotherName);
+// console.log(myYoutubename);
 
-//   Heap
+// //   Heap
 let userOne = {
     email: "user@gmail.com",
     upi:"user@ybl"
