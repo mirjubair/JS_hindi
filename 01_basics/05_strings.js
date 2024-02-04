@@ -19,7 +19,7 @@ const gameName= new String("jubi-Don-greatest-technician-that-ever-lived")
 const newString = gameName.substring(0,4)
 console.log(newString);
 
-const anotherstring = gameName.slice(-6,6)
+const anotherstring = gameName.slice(3,6)
 console.log(anotherstring);
 
 const newStringOne="   Jubair   "
