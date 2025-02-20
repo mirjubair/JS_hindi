@@ -46,7 +46,7 @@ function addOne(num){
 
 }
 
-console.log(addOne(5));
+console.log(addOne(6));
 
 // console.log(addTwo(5));  // error as function is used as an expression (hoisting)
 
