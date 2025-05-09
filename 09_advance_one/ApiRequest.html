@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Profile Card</title>
 </head>
-<body style="background-color: #212121;">
-    
-</body>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0;">
+
+  <div style="text-align: center;">
+    <button id="btn" style="margin-bottom: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Load GitHub Info
+    </button>
+
+    <div id="card" style="background-color: white; border: 1px solid #ccc; border-radius: 15px; width: 400px; min-height: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;">
+      <h2>Info Card</h2>
+      <p>Click the button above to load profile</p>
+    </div>
+  </div>
+
 <script>
-    const requestUrl = 'https://api.github.com/users/mirjubair'
-    const xhr= new XMLHttpRequest()
-    xhr.open('GET',requestUrl)
-    xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
-        if(xhr.readyState === 4){
-            // we get the string(json) in order to convert into object
-            const data =JSON.parse(this.responseText)
-            console.log(data.followers);
-        }
+  const requestUrl = 'https://api.github.com/users/mirjubair';
+  const xhr = new XMLHttpRequest();
+  let data;
+
+  xhr.open('GET', requestUrl);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      data = JSON.parse(xhr.responseText);
+      console.log("Data fetched:", data);
     }
-    
-    xhr.send()
+  };
+  xhr.send();
+
+  const button = document.querySelector("#btn");
+  const card = document.querySelector("#card");
+
+  button.addEventListener('click', function() {
+    if (!data) {
+      card.innerHTML = "<p>Data not loaded yet. Please wait.</p>";
+      return;
+    }
+    card.innerHTML = `
+      <img src="${data.avatar_url}" width="100" style="border-radius: 50%;" />
+      <p><strong>Name:</strong> ${data.name || data.login}</p>
+      <p><strong>Username:</strong> ${data.login}</p>
+      <p><strong>Bio:</strong> ${data.bio}</p>
+      <p><strong>Location:</strong> ${data.location}</p>
+      <p><strong>Public Repos:</strong> ${data.public_repos}</p>
+      <p><strong>Followers:</strong> ${data.followers}</p>
+      <p><strong>Following:</strong> ${data.following}</p>
+      <p><strong>Profile:</strong> <a href="${data.html_url}" target="_blank">${data.html_url}</a></p>
+    `;
+  });
 </script>
+
+</body>
 </html>
